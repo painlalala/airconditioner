@@ -1,0 +1,121 @@
+/* Робимо фон сторінки світло-сірим, щоб білі блоки контрастували */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Arial", sans-serif;
+    background-color: #f0f0f0;
+}
+
+/* Обгортка всієї секції */
+.contact-wrapper {
+    text-align: center;
+    padding-top: 40px; /* Відступ зверху, щоб хедер не перекривав заголовок */
+}
+
+/* Заголовок сторінки */
+.contact-wrapper h1 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #ddd;
+}
+
+/* Білий контейнер з тінню */
+.contact-container {
+    background-color: #fff;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-radius: 8px;
+    padding: 40px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Контейнер для карти та інформації */
+.contact-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 20px;
+}
+
+/* Стовпець з картою */
+.map {
+    flex: 1 1 400px; /* мінімальна ширина 400px */
+    min-width: 300px;
+}
+
+.map h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    color: #333;
+}
+
+/* Карта: робимо її адаптивною */
+.map iframe {
+    width: 100%;
+    height: 300px;
+    border: 0;
+    border-radius: 8px;
+}
+
+/* Стовпець з контактною інформацією */
+.info {
+    flex: 1 1 400px;
+    min-width: 300px;
+}
+
+.info h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    color: #333;
+}
+
+/* Текст у блоці */
+.info p {
+    text-align: left;
+    font-size: 1rem;
+    color: #555;
+    margin: 10px 0;
+}
+
+/* Блок для фото офісу */
+.office-photo {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.office-photo h3 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+/* Фото */
+.office-photo img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+}
+
+/* Адаптивна верстка на вузьких екранах */
+@media (max-width: 768px) {
+    .contact-details {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .map, .info {
+        flex: none;
+        width: 100%;
+    }
+
+    .map iframe {
+        height: 250px;
+    }
+}

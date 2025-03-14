@@ -1,0 +1,75 @@
+.footer {
+    background-color: #3c3c30; /* Dark greenish background */
+    color: #f7f3d7; /* Light yellow text */
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around; /* Space between logo and address */
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.footer-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.footer-logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between logo and "Eurovent" text */
+}
+
+.footer-logo-img {
+    height: auto;
+}
+
+.footer-logo-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.footer-text {
+    font-size: 0.875rem;
+    line-height: 1.5;
+}
+
+.footer-middle {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-left: 40px; /* Space between middle section and logo section */
+}
+
+.footer-address {
+    font-size: 0.875rem;
+    line-height: 1.5;
+}
+
+.footer-newsletter-title {
+    margin-top: 20px;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.footer-down {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #f7f3d7; /* Optional border to separate copyright */
+    width: 100%;
+}
+
+.footer-down p {
+    font-size: 0.875rem;
+    color: #d9d7c3;
+}
