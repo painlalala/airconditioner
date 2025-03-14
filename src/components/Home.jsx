@@ -26,6 +26,10 @@ const Home = () => {
   const handleSolutionsClick = () => {
     navigate("/solutions");
   };
+
+  const handleContactClick = () => {
+    navigate("/contact");
+  };
   return (
     <>
       <section className="hero">
@@ -39,6 +43,9 @@ const Home = () => {
             <div className="hero-buttons">
               <button className="button" onClick={handleSolutionsClick}>
                 Solutions
+              </button>
+              <button className="button" onClick={handleContactClick}>
+                Contact us
               </button>
             </div>
           </div>

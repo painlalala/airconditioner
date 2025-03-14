@@ -153,3 +153,132 @@ p {
         font-size: 1.8rem;
     }
 }
+/* Секція послуг */
+.services-section {
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.services-section h2 {
+    font-size: 2.2rem;
+    color: #2c3e50;
+    margin-bottom: 40px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+.services-section h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: #3498db;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    text-align: left;
+}
+
+.services-column {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #e9ecef;
+}
+
+.services-column:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.services-column h3 {
+    font-size: 1.6rem;
+    color: #3498db;
+    margin-bottom: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.services-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.services-column li {
+    font-size: 1.1rem;
+    color: #7f8c8d;
+    line-height: 1.7;
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 15px;
+    transition: color 0.3s ease;
+}
+
+.services-column li:hover {
+    color: #2c3e50;
+}
+
+.services-column li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    top: 2px;
+    color: #3498db;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .services-column {
+        padding: 25px;
+    }
+
+    .services-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .services-column h3 {
+        font-size: 1.4rem;
+    }
+
+    .services-column li {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .services-section {
+        margin: 40px auto;
+    }
+
+    .services-section h2 {
+        font-size: 1.6rem;
+    }
+
+    .services-column {
+        padding: 20px;
+    }
+
+    .services-column li {
+        margin-bottom: 12px;
+    }
+}
