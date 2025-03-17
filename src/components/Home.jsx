@@ -1,5 +1,7 @@
 import './Home.css';
+import React from 'react';
 import {useNavigate} from 'react-router-dom';
+import logo from '../img/logo.jpg';
 import mainPhoto from '../img/main.jpg';
 import global from '../img/global.png';
 import gallery from '../img/gallery.png';
@@ -34,7 +36,10 @@ const Home = () => {
     <>
       <section className="hero">
         <div className="hero-content">
-          <h1 className="hero-title">Eurovent</h1>
+          <a href="/" className="main-logo">
+            <img src={logo} alt="Logo" className="main-logo-img" />
+          </a>
+          {/*<h1 className="hero-title">Eurovent</h1>*/}
           <div className="hero-divider"></div>
           <div className="hero-text">
             <p className="hero-description">

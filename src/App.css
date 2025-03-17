@@ -7,10 +7,10 @@ body {
     flex-direction: column;
 }
 .main-content {
-    margin-top: 60px; /* Відповідає height хедера */
-    padding: 20px;    /* Додатковий відступ навколо */
-    background-color: #2f2f2f; /* Темний фон (для контрасту) */
-    min-height: 100vh; /* Щоб контент розтягнувся на всю висоту екрана */
+    margin-top: 60px;
+    padding: 20px;
+    background-color: #333333;
+    min-height: 100vh;
 }
 
 .App {

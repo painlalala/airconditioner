@@ -8,10 +8,9 @@ const Footer = () => {
       <div className="footer-container">
         <div className="footer-left">
           <div className="footer-logo-container">
-            <a href="/" className="logo">
+            <a href="/" className="footer-logo">
               <img src={logo} alt="Logo" className="footer-logo-img" />
             </a>
-            <h2 className="footer-logo-text">Eurovent</h2>
           </div>
           <p className="footer-text">
             Ми кваліфікована компанія яка займається встановленням вентиляції та кондиціонерів по Львову та Львівській області.

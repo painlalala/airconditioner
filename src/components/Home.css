@@ -7,10 +7,14 @@
     gap: 50px;
     box-sizing: border-box;
 }
-
+.main-logo-img {
+    height: 300px;
+    width: 300px;
+}
 .hero-content {
     display: flex;
     align-items: flex-start;
+    align-items: center;
     gap: 20px;
     max-width: 1200px;
     width: 100%;
@@ -33,6 +37,9 @@
 
 .hero-text {
     flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .hero-description {

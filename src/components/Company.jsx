@@ -46,7 +46,7 @@ const Company = () => {
               <span role="img" aria-label="building">🏢</span>
             </div>
             <div className="counter">{projects}</div>
-            <p>Виконано понад 100 великих об’єктів</p>
+            <p>Виконано понад 100 об’єктів різної складності</p>
           </div>
 
           <div className="indicator">
@@ -57,13 +57,13 @@ const Company = () => {
             <p>Ми спеціалізуємося у 8 сферах діяльності</p>
           </div>
 
-          <div className="indicator">
-            <div className="icon">
-              <span role="img" aria-label="people">👥</span>
-            </div>
-            <div className="counter">{employees}</div>
-            <p>Наша команда налічує понад 100 працівників</p>
-          </div>
+          {/*<div className="indicator">*/}
+          {/*  <div className="icon">*/}
+          {/*    <span role="img" aria-label="people">👥</span>*/}
+          {/*  </div>*/}
+          {/*  <div className="counter">{employees}</div>*/}
+          {/*  <p>Наша команда налічує понад 100 працівників</p>*/}
+          {/*</div>*/}
         </div>
       </div>
 
