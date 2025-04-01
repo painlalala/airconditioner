@@ -77,12 +77,12 @@
 }
 
 .hero-image {
-    width: 100%;
+    width: 103%;
     height: 500px;
-    object-fit: cover;
+    object-fit: contain;
     object-position: top;
-
 }
+
 .our-clients {
     background: #ffffff;
     width: 100%;

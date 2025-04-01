@@ -1,132 +1,93 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Projects.css";
-import vam from '../img/vam.jpg';
-import leleka from '../img/leleka.jpg';
-import pivdenny from '../img/pivdenny.jpg';
-import resturaunt from '../img/resturaunt.jpg';
-import sharbel from '../img/sharbel.jpg';
-import ukrpol from '../img/ukrpol.jpg';
-import gl from '../img/gl.jpg';
-import cvg from '../img/cvg.jpg';
+import vam from '../img//ProjectVam/vam.jpg';
+import leleka from '../img/ProjectLeleka/leleka.jpg';
+import pivdenny from '../img/ProjectPivdenny/pivden_main.jpg';
+import resturaunt from '../img/ProjectKultura/kultura_main.jpg';
+import sharbel from '../img/ProjectSharbel/sharbel_main.jpg';
+import ukrpol from '../img/ProjectUkrpol/ukrpol_main.jpg';
+import gl from '../img/ProjectGlobalLogic/global_main_1.jpg';
+import cvgMain from '../img/ProjectCvgUkraine/cvg_main.jpg';
 
 const Projects = () => {
   return (
     <div className="projects-container">
       <h1>Наші проекти</h1>
       {/* Перший блок */}
-      <div className="project-block">
-        <div className="project-image">
-          <img src={vam} alt="Проект 1" />
-        </div>
+      <Link to="/solutions/vam" className="project-block">
         <div className="project-info">
           <h2>ТЦ «ВАМ»</h2>
-          <p>
-            У торговому центрі «ВАМ» було реалізовано комплекс інженерних систем, зокрема вентиляцію, опалення та кондиціювання.
-            Для цього використовувалися сучасні вентиляційні установки, чилери та кондиціонери, що забезпечують комфортний
-            мікроклімат для відвідувачів та персоналу.
-          </p>
         </div>
-      </div>
+        <div className="project-image">
+          <img src={vam} alt="Проект ТЦ «ВАМ»" />
+        </div>
+      </Link>
 
       {/* Другий блок */}
-      <div className="project-block">
+      <Link to="/solutions/leleka" className="project-block">
         <div className="project-image">
-          <img src={leleka} alt="Проект 2" />
+          <img src={leleka} alt="Проект Пологовий будинок «Лелека»" />
         </div>
         <div className="project-info">
           <h2>Пологовий будинок «Лелека»</h2>
-          <p>
-            Даний об’єкт розташований у Києві та є приватним пологовим будинком. У рамках проєкту було виконано монтаж систем
-            вентиляції, кондиціювання, а також чилера з виносними конденсаторами для забезпечення роботи вентиляційних установок в
-            операційному блоці. Окрім цього, було змонтовано систему вентиляції для чистих приміщень, що відповідає високим
-            стандартам стерильності та комфорту.
-          </p>
         </div>
-      </div>
+      </Link>
 
       {/* Третій блок */}
-      <div className="project-block">
-        <div className="project-image">
-          <img src={pivdenny} alt="Проект 3" />
-        </div>
+      <Link to="/solutions/pivdenny" className="project-block">
         <div className="project-info">
           <h2>ТЦ «Південний»</h2>
-          <p>
-            Даний об’єкт є офісним центром, у якому реалізовано систему вентиляції, кондиціювання та опалення на базі VRV-системи.
-            Це забезпечує ефективне регулювання мікроклімату та енергоефективність будівлі.
-          </p>
         </div>
-      </div>
-
-      <div className="project-block">
         <div className="project-image">
-          <img src={gl} alt="Проект 4" />
+          <img src={pivdenny} alt="Проект ТЦ «Південний»" />
+        </div>
+      </Link>
+
+      <Link to="/solutions/global-logic" className="project-block">
+        <div className="project-image">
+          <img src={gl} alt="Проект IT «Global Logic»" />
         </div>
         <div className="project-info">
           <h2>IT «Global Logic»</h2>
-          <p>
-            В офісному центрі компанії “Global Logic” було встановлено сучасні інженерні системи, зокрема вентиляцію,
-            кондиціювання, опалення, індивідуальний тепловий пункт (ІТП) та каналізацію.
-            Проєкт передбачає ефективне охолодження приміщень за допомогою системи чилер-фанкойл, а також монтаж вентиляційної
-            системи з високоефективними рекуператорами. Це забезпечує комфортний мікроклімат та енергоефективність будівлі.
-          </p>
         </div>
-      </div>
+      </Link>
 
-      <div className="project-block">
-        <div className="project-image">
-          <img src={resturaunt} alt="Проект 5" />
-        </div>
+      <Link to="/solutions/kultura" className="project-block">
         <div className="project-info">
           <h2>Ресторан «Культура»</h2>
-          <p>
-            Даний об’єкт – ресторан «Культура», у якому було змонтовано систему вентиляції з високоефективними рекуператорами.
-            Опалення реалізовано на базі системи кондиціювання, що забезпечує як обігрів у холодний період, так і охолодження
-            влітку, створюючи комфортний мікроклімат у приміщенні.
-          </p>
         </div>
-      </div>
-
-      <div className="project-block">
         <div className="project-image">
-          <img src={sharbel} alt="Проект 6" />
+          <img src={resturaunt} alt="Проект Ресторан «Культура»" />
+        </div>
+      </Link>
+
+      <Link to="/solutions/sharbel" className="project-block">
+        <div className="project-image">
+          <img src={sharbel} alt="Проект Готельно-оздоровчий комплекс «Святий Шарбель»" />
         </div>
         <div className="project-info">
           <h2>Готельно-оздоровчий комплекс «Святий Шарбель»</h2>
-          <p>
-            Готельно-оздоровчий відпочинковий комплекс, у якому по всій території було реалізовано VRV-системи кондиціювання та
-            вентиляції. Це забезпечує ефективний контроль мікроклімату в усіх зонах комплексу, створюючи комфортні умови для
-            відпочинку та оздоровлення.
-          </p>
         </div>
-      </div>
+      </Link>
 
-      <div className="project-block">
-        <div className="project-image">
-          <img src={cvg} alt="Проект 7" />
-        </div>
+      <Link to="/solutions/cvg-ukraine" className="project-block">
         <div className="project-info">
           <h2>«ЦВГ Україна»</h2>
-          <p>
-            На даному об’єкті було реалізовано систему вентиляції та кондиціювання на базі Rooftop-системи, а також змонтовано
-            вентиляційні установки та VRV-системи кондиціювання. Це забезпечує ефективний розподіл повітря та підтримання
-            оптимального мікроклімату в приміщеннях для підприємства.
-          </p>
         </div>
-      </div>
-
-      <div className="project-block">
         <div className="project-image">
-          <img src={ukrpol} alt="Проект 8" />
+          <img src={cvgMain} alt="Проект «ЦВГ Україна»" />
+        </div>
+      </Link>
+
+      <Link to="/solutions/ukrpol" className="project-block">
+        <div className="project-image">
+          <img src={ukrpol} alt="Проект «Укрпол»" />
         </div>
         <div className="project-info">
           <h2>«Укрпол»</h2>
-          <p>
-            Ми впровадили систему вентиляції, адаптовану до специфічних потреб поліграфічного заводу. Вона забезпечує ефективний
-            повітрообмін, підтримання оптимального мікроклімату та відповідність виробничим вимогам.
-          </p>
         </div>
-      </div>
+      </Link>
     </div>
   );
 };

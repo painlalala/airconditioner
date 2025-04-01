@@ -2,7 +2,7 @@ import './Home.css';
 import React from 'react';
 import {useNavigate} from 'react-router-dom';
 import logo from '../img/logo.jpg';
-import mainPhoto from '../img/main.jpg';
+import mainPhoto from '../img/main_photo.jpg';
 import global from '../img/global.png';
 import gallery from '../img/gallery.png';
 import nobilis from '../img/nobilis.png';
