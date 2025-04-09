@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./Projects.css";
 import vam from '../img//ProjectVam/vam.jpg';
 import leleka from '../img/ProjectLeleka/leleka.jpg';
-import pivdenny from '../img/ProjectPivdenny/pivden_main.jpg';
+import pivdenny from '../img/ProjectPivdenny/pivdenny_main.jpg';
 import resturaunt from '../img/ProjectKultura/kultura_main.jpg';
 import sharbel from '../img/ProjectSharbel/sharbel_main.jpg';
 import ukrpol from '../img/ProjectUkrpol/ukrpol_main.jpg';

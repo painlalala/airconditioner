@@ -15,12 +15,14 @@ import ProjectSharbel from './components/projects/ProjectSharbel';
 import ProjectCvgUkraine from './components/projects/ProjectCvgUkraine';
 import ProjectUkrpol from './components/projects/ProjectUkrpol';
 import './App.css';
+import ScrollToTop from './components/ScrollToTop.jsx';
 
 function App() {
   return (
     <Router>
       <Header />
       <div className="main-content">
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/solutions" element={<Projects />} />
