@@ -1,24 +1,18 @@
-# Stage 1: Build the application
-FROM node:18.7.0 AS builder
+# Use Node.js 18.7.0 as the base image
+FROM node:18.7.0
+
+# Set working directory
 WORKDIR /app
 
-# Copy dependency definitions and install dependencies
-COPY package*.json ./
-RUN npm install
+# Copy package files for dependency installation
+COPY package.json package-lock.json* ./
+RUN npm ci --silent
 
-# Copy the rest of your application code
+# Copy the entire project
 COPY . .
 
-# Build the application using Vite
-RUN npm run build
+# Expose the default Vite dev server port (5173)
+EXPOSE 5173
 
-# Stage 2: Serve the built app using Nginx
-FROM nginx:stable-alpine
-# Copy the build output (default Vite output is "dist") to the Nginx html directory
-COPY --from=builder /app/dist /usr/share/nginx/html
-
-# Expose port 80
-EXPOSE 80
-
-# Start Nginx in the foreground
-CMD ["nginx", "-g", "daemon off;"]
+# Start the Vite development server with --host to bind to 0.0.0.0
+CMD ["npm", "run", "dev", "--", "--host"]
