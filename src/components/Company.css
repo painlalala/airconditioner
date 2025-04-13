@@ -5,27 +5,43 @@
     font-family: 'Roboto', sans-serif;
 }
 
-h1 {
+.company-container h1 {
     font-size: 3rem;
     color: #2c3e50;
     margin-bottom: 15px;
     font-weight: 700;
 }
 
-h2 {
+.company-container h2 {
     font-size: 2.2rem;
     color: #ffffff;
     margin-bottom: 40px;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease-out;
 }
 
-p {
+.company-container h2.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.company-container p {
     font-size: 1.1rem;
     color: #7f8c8d;
     margin-bottom: 50px;
     line-height: 1.6;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease-out;
+}
+
+.company-container p.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* Секція лічильників */
@@ -78,6 +94,13 @@ p {
     margin: 20px;
     text-align: center;
     transition: transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.indicator.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .indicator:hover {
@@ -97,6 +120,12 @@ p {
     color: #3498db;
     margin-bottom: 20px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.icon:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 .counter {
@@ -104,6 +133,11 @@ p {
     font-weight: 700;
     margin-bottom: 15px;
     color: #ecf0f1;
+    transition: color 0.3s ease;
+}
+
+.indicator:hover .counter {
+    color: #ffc107;
 }
 
 .indicator p {
@@ -111,6 +145,11 @@ p {
     color: #ecf0f1;
     margin: 0;
     line-height: 1.5;
+    transition: color 0.3s ease;
+}
+
+.indicator:hover p {
+    color: #ffc107;
 }
 
 /* Секція опису компанії */
@@ -118,6 +157,7 @@ p {
     max-width: 800px;
     margin: 0 auto;
     text-align: left;
+    padding: 40px 20px;
 }
 
 .about-section h2 {
@@ -134,25 +174,6 @@ p {
     text-align: center;
 }
 
-/* Адаптивність */
-@media (max-width: 768px) {
-    .indicators-grid {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .indicator {
-        margin: 30px 0;
-    }
-
-    h1 {
-        font-size: 2.5rem;
-    }
-
-    h2 {
-        font-size: 1.8rem;
-    }
-}
 /* Секція послуг */
 .services-section {
     max-width: 1000px;
@@ -195,6 +216,13 @@ p {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: 1px solid #e9ecef;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.services-column.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .services-column:hover {
@@ -243,13 +271,30 @@ p {
 
 /* Адаптивність */
 @media (max-width: 768px) {
+    .indicators-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .indicator {
+        margin: 30px 0;
+    }
+
+    .company-container h1 {
+        font-size: 2.5rem;
+    }
+
+    .company-container h2 {
+        font-size: 1.8rem;
+    }
+
     .services-grid {
         grid-template-columns: 1fr;
         gap: 20px;
     }
 
     .services-column {
-        padding: 25px;
+        padding: 20px;
     }
 
     .services-section h2 {
@@ -267,7 +312,7 @@ p {
 
 @media (max-width: 480px) {
     .services-section {
-        margin: 40px auto;
+        padding: 0 15px;
     }
 
     .services-section h2 {
@@ -275,10 +320,10 @@ p {
     }
 
     .services-column {
-        padding: 20px;
+        padding: 15px;
     }
 
     .services-column li {
-        margin-bottom: 12px;
+        font-size: 0.95rem;
     }
 }

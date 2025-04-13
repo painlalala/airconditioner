@@ -1,6 +1,6 @@
 import './Home.css';
-import React from 'react';
-import {useNavigate} from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import logo from '../img/logo.jpg';
 import mainPhoto from '../img/main_photo.jpg';
 import global from '../img/global.png';
@@ -22,9 +22,18 @@ import okko from '../img/okko.png';
 import kredo from '../img/kredo.png';
 
 const Home = () => {
-  const navigate = useNavigate(); // Ініціалізуємо хук useNavigate
+  const navigate = useNavigate();
+  const [scrollPosition, setScrollPosition] = useState(0);
 
-  // Функція для редіректу на /solutions
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollPosition(window.scrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const handleSolutionsClick = () => {
     navigate("/solutions");
   };
@@ -32,60 +41,104 @@ const Home = () => {
   const handleContactClick = () => {
     navigate("/contact");
   };
+
   return (
-    <>
+    <main className="home-page">
       <section className="hero">
         <div className="hero-content">
-          <a href="/" className="main-logo">
-            <img src={logo} alt="Logo" className="main-logo-img" />
-          </a>
-          {/*<h1 className="hero-title">Eurovent</h1>*/}
-          <div className="hero-divider"></div>
+          <div className="logo-container">
+            <img src={logo} alt="Eurovent Logo" className="main-logo-img" />
+          </div>
           <div className="hero-text">
+            <h1 className="hero-title">Eurovent</h1>
+            <div className="hero-divider"></div>
             <p className="hero-description">
               We are Eurovent, an end-to-end provider of ventilation and air conditioning solutions.
             </p>
             <div className="hero-buttons">
-              <button className="button" onClick={handleSolutionsClick}>
+              <button className="button primary" onClick={handleSolutionsClick}>
                 Solutions
               </button>
-              <button className="button" onClick={handleContactClick}>
+              <button className="button secondary" onClick={handleContactClick}>
                 Contact us
               </button>
             </div>
           </div>
         </div>
         <div className="hero-image-wrapper">
-          <img
-            src={mainPhoto}
-            alt="Building"
-            className="hero-image"
-          />
+          <div 
+            className="hero-image-overlay"
+            style={{ transform: `translateY(${scrollPosition * 0.5}px)` }}
+          >
+            <img
+              src={mainPhoto}
+              alt="Modern Building with HVAC Systems"
+              className="hero-image"
+            />
+          </div>
+          <div className="hero-image-gradient"></div>
         </div>
-        <div className="our-clients">
-          <h1 className="our-clients-header">Наші клієнти</h1>
-          <div className="our-clients-grid">
-            <img src={global} alt="logo" className="client-logo" />
-            <img src={gallery} alt="logo" className="client-logo" />
-            <img src={nobilis} alt="logo" className="client-logo" />
-            <img src={parus} alt="logo" className="client-logo" />
-            <img src={riel} alt="logo" className="client-logo" />
-            <img src={vam} alt="logo" className="client-logo" />
-            <img src={tmd} alt="logo" className="client-logo" />
-            <img src={km} alt="logo" className="client-logo" />
-            <img src={soft} alt="logo" className="client-logo" />
-            <img src={cvg} alt="logo" className="client-logo" />
-            <img src={ukr} alt="logo" className="client-logo" />
-            <img src={gw} alt="logo" className="client-logo" />
-            <img src={leleka} alt="logo" className="client-logo" />
-            <img src={cypress} alt="logo" className="client-logo" />
-            <img src={citadel} alt="logo" className="client-logo" />
-            <img src={okko} alt="logo" className="client-logo" />
-            <img src={kredo} alt="logo" className="client-logo" />
+      </section>
+
+      <section className="clients-section">
+        <div className="clients-container">
+          <h2 className="clients-title">Наші клієнти</h2>
+          <div className="clients-grid">
+            <div className="client-logo-wrapper">
+              <img src={global} alt="Global Logic" className="client-logo" />
+            </div>
+            <div className="client-logo-wrapper">
+              <img src={gallery} alt="Gallery" className="client-logo" />
+            </div>
+            <div className="client-logo-wrapper">
+              <img src={nobilis} alt="Nobilis" className="client-logo" />
+            </div>
+            <div className="client-logo-wrapper">
+              <img src={parus} alt="Parus" className="client-logo" />
+            </div>
+            <div className="client-logo-wrapper">
+              <img src={riel} alt="Riel" className="client-logo" />
+            </div>
+            <div className="client-logo-wrapper">
+              <img src={vam} alt="VAM" className="client-logo" />
+            </div>
+            <div className="client-logo-wrapper">
+              <img src={tmd} alt="TMD" className="client-logo" />
+            </div>
+            <div className="client-logo-wrapper">
+              <img src={km} alt="KM" className="client-logo" />
+            </div>
+            <div className="client-logo-wrapper">
+              <img src={soft} alt="Soft" className="client-logo" />
+            </div>
+            <div className="client-logo-wrapper">
+              <img src={cvg} alt="CVG" className="client-logo" />
+            </div>
+            <div className="client-logo-wrapper">
+              <img src={ukr} alt="Ukr" className="client-logo" />
+            </div>
+            <div className="client-logo-wrapper">
+              <img src={gw} alt="GW" className="client-logo" />
+            </div>
+            <div className="client-logo-wrapper">
+              <img src={leleka} alt="Leleka" className="client-logo" />
+            </div>
+            <div className="client-logo-wrapper">
+              <img src={cypress} alt="Cypress" className="client-logo" />
+            </div>
+            <div className="client-logo-wrapper">
+              <img src={citadel} alt="Citadel" className="client-logo" />
+            </div>
+            <div className="client-logo-wrapper">
+              <img src={okko} alt="OKKO" className="client-logo" />
+            </div>
+            <div className="client-logo-wrapper">
+              <img src={kredo} alt="Kredo" className="client-logo" />
+            </div>
           </div>
         </div>
       </section>
-    </>
+    </main>
   );
 };
 

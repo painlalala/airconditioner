@@ -1,13 +1,41 @@
-import React from "react";
-import "./Contact.css";
+import React, { useRef, useState, useEffect } from "react";
+import "./Contact.new.css";
 
 const Contact = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(entry.target);
+        }
+      },
+      {
+        threshold: 0.2,
+        rootMargin: '0px 0px -100px 0px'
+      }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <div className="contact-wrapper">
-      <h1 className="contact-head">Контакти</h1>
+    <div className="contact-wrapper" ref={sectionRef}>
+      <h1 className={`contact-head ${isVisible ? 'visible' : ''}`}>Контакти</h1>
       <div className="contact-container">
         <div className="contact-details">
-          <div className="map">
+          <div className={`map ${isVisible ? 'visible' : ''}`}>
             <h2>Ми знаходимось</h2>
             <iframe
               title="Office Location"
@@ -16,20 +44,38 @@ const Contact = () => {
               loading="lazy"
             />
           </div>
-          <div className="info">
+          <div className={`info ${isVisible ? 'visible' : ''}`}>
             <h2>Контактна інформація</h2>
-            <p>
-              <strong>Email:</strong> v.gakivnyk@gmail.com
-            </p>
-            <p>
-              <strong>Телефон:</strong> +380984442888
-            </p>
-            <p>
-              <strong>Час роботи:</strong> Пн-Пт 9:00 - 18:00
-            </p>
-            <p>
-              <strong>Адресса:</strong> Львівська обл. Львів, вул.Станція Личаків 7
-            </p>
+            <div className="contact-info">
+              <div className="contact-item">
+                <span className="icon">📧</span>
+                <div className="contact-text">
+                  <strong>Email:</strong>
+                  <span>v.gakivnyk@gmail.com</span>
+                </div>
+              </div>
+              <div className="contact-item">
+                <span className="icon">📱</span>
+                <div className="contact-text">
+                  <strong>Телефон:</strong>
+                  <span>+380984442888</span>
+                </div>
+              </div>
+              <div className="contact-item">
+                <span className="icon">⏰</span>
+                <div className="contact-text">
+                  <strong>Час роботи:</strong>
+                  <span>Пн-Пт 9:00 - 18:00</span>
+                </div>
+              </div>
+              <div className="contact-item">
+                <span className="icon">📍</span>
+                <div className="contact-text">
+                  <strong>Адреса:</strong>
+                  <span>Львівська обл. Львів, вул.Станція Личаків 7</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
